@@ -1,0 +1,161 @@
+import React, { useState } from 'react';
+import './login.css';
+import { Link } from 'react-router-dom';
+const SignUp = () => {
+
+  const [firstname, setFirstname] = useState('');
+  const [lastname, setLastname] = useState('');
+  const [email, setEmail] = useState('');
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [confirmPassword, setConfirmPassword] = useState('');
+  const [errors, setErrors] = useState({});
+  const [showPopup, setShowPopup] = useState(false);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Validate the form fields
+    const errors = {};
+    if (firstname.trim() === '') {
+      errors.firstname = 'Firstname is required';
+    }
+    if (lastname.trim() === '') {
+      errors.lastname = 'Lastname is required';
+    }
+    if (email.trim() === '') {
+      errors.email = 'Email is required';
+    } else if (!/\S+@\S+\.\S+/.test(email)) {
+      errors.email = 'Invalid email address';
+    }
+    if (username.trim() === '') {
+      errors.username = 'Username is required';
+    }
+    
+    if (password.trim() === '') {
+      errors.password = 'Password is required';
+    }
+
+    if (confirmPassword.trim() === '') {
+      errors.confirmPassword = 'Confirm Password is required';
+    } else if (password !== confirmPassword) {
+      errors.confirmPassword = 'Passwords do not match';
+    }
+
+    if (Object.keys(errors).length > 0) {
+      setErrors(errors);
+      return;
+    }
+
+    // Form is valid, proceed with sign-up logic
+    console.log('Firstname:',firstname);
+    console.log('Lastname:',lastname);
+    console.log('Email:', email);
+    console.log('Username:',username);
+    console.log('Password:', password);
+    console.log('Confirm Password:', confirmPassword);
+
+    // Reset form fields
+    setFirstname('');
+    setLastname('');
+    setEmail('');
+    setUsername('');
+    setPassword('');
+    setConfirmPassword('');
+    setErrors({});
+    setShowPopup(true);
+  };
+
+  return (
+    <div className="container row login-box">
+      <div className="col login-title">
+        <h1>Unlock the magic of your next event</h1>
+        <span className="small-text">Let's get started!</span>
+      </div>
+      <div className="col login-form">
+        <div className="avatar">{/* <img src="https://68.media.tumblr.com/avatar_8671f0f36a5f_128.png" alt="" /> */}</div>
+        <div className="registration">
+          Already have an account?<Link to="/">Login</Link>
+        </div>
+        <form onSubmit={handleSubmit}>
+        <label htmlFor="firstname" className="login">
+      
+            <input
+              id="firstname"
+              type="text"
+              placeholder="Firstname"
+              value={firstname}
+              onChange={(e) => setFirstname(e.target.value)}
+            />
+            {errors.firstname && <div className="error">{errors.firstname}</div>}
+          </label>
+          <br/>
+          <label htmlFor="lastname" className="miln">
+            <input
+              id="lastname"
+              type="text"
+              placeholder="Lastname"
+              value={lastname}
+              onChange={(e) => setLastname(e.target.value)}
+            />
+            {errors.lastname && <div className="error">{errors.lastname}</div>}
+          </label>
+          <label htmlFor="email" className="login">
+            <input
+              id="email"
+              type="email"
+              placeholder="Email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+            {errors.email && <div className="error">{errors.email}</div>}
+          </label>
+          <label htmlFor="username" className="login">
+            <input
+              id="username"
+              type="text"
+              placeholder="Username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+            {errors.username && <div className="error">{errors.username}</div>}
+          </label>
+          <label htmlFor="password" className="passwd">
+            <input
+              id="password"
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+            {errors.password && <div className="error">{errors.password}</div>}
+          </label>
+          <label htmlFor="confirmPassword" className="passwd">
+            <input
+              id="confirmPassword"
+              type="password"
+              placeholder="Confirm Password"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+            />
+            {errors.confirmPassword && <div className="error">{errors.confirmPassword}</div>}
+          </label>
+          <button className="button" type="submit">
+            Sign Up
+          </button>
+        </form>
+        {showPopup && (
+          <div className="popup">
+            <div className="popup-content">
+              <span className="close" onClick={() => setShowPopup(false)}>
+                &times;
+              </span>
+              <p>Sign up successful! You can now log in.</p>
+            </div>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
+export default SignUp;
