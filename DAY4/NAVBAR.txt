@@ -1,0 +1,117 @@
+import React from 'react';
+
+function Home() {
+  return (
+    <div className="container">
+      {/* <h1>Hi</h1> */}
+      <nav className="navbar">
+        <ul className="navbar-nav">
+          <li className="nav-item">
+            <a href="/" className="nav-link">
+              HOME
+            </a>
+          </li>
+          <li className="nav-item">
+            <a href="/about" className="nav-link">
+              ABOUT
+            </a>
+          </li>
+          <li className="nav-item">
+            <a href="/about" className="nav-link">
+              GALLERY
+            </a>
+          </li>
+          <li className="nav-item">
+            <a href="/contact" className="nav-link">
+              CONTACT
+            </a>
+          </li>
+        </ul>
+      </nav>
+      <div className="sidebar">
+        <ul className="sidebar-nav">
+          <li className="sidebar-item">
+            <a href="/" className="sidebar-link">
+              <b>DASHBOARD</b>
+            </a>
+          </li>
+          <li className="sidebar-item">
+            <a href="/profile" className="sidebar-link">
+              <b>PROFILE</b>
+            </a>
+          </li>
+          <li className="sidebar-item">
+            <a href="/profile" className="sidebar-link">
+             <b>PRICING</b>
+            </a>
+          </li>
+          <li className="sidebar-item">
+            <a href="/settings" className="sidebar-link">
+              <b>SETTINGS</b>
+            </a>
+          </li>
+        </ul>
+      
+      </div>
+    </div>
+  )
+}
+
+export default Home;
+
+// // Internal CSS
+const styles = `
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar {
+  background-color: #333;
+  padding: 10px;
+}
+
+.navbar-nav {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-item {
+  margin-right: 10px;
+}
+
+.nav-link {
+  color: #fff;
+  text-decoration: none;
+}
+
+.sidebar {
+  background-color: #f1f1f1;
+  padding: 10px;
+  width:200px;
+  height:100vh;
+}
+
+.sidebar-nav {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.sidebar-item {
+  margin-bottom: 10px;
+  margin-top:50px;
+}
+
+.sidebar-link {
+  color: #333;
+  text-decoration: none;
+}
+`;
+
+// Apply internal CSS
+const styleTag = document.createElement('style');
+styleTag.innerHTML = styles;
+document.head.appendChild(styleTag);
