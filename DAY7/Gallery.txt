@@ -1,0 +1,66 @@
+import * as React from 'react';
+import AppBar from '@mui/material/AppBar';
+import Button from '@mui/material/Button';
+import CameraIcon from '@mui/icons-material/PhotoCamera';
+import Card from '@mui/material/Card';
+import CardActions from '@mui/material/CardActions';
+import CardContent from '@mui/material/CardContent';
+import CardMedia from '@mui/material/CardMedia';
+import CssBaseline from '@mui/material/CssBaseline';
+import Grid from '@mui/material/Grid';
+import Stack from '@mui/material/Stack';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import Container from '@mui/material/Container';
+import Link from '@mui/material/Link';
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Navbar from './Navbar';
+
+function Copyright() {
+  return (
+    <Typography variant="body2" color="text.secondary" align="center">
+      {'Copyright © '}
+      <Link color="inherit" href="https://mui.com/">
+        Your Website
+      </Link>{' '}
+      {new Date().getFullYear()}
+      {'.'}
+    </Typography>
+  );
+}
+
+const cards = [1];
+
+// TODO remove, this demo shouldn't need to reset the theme.
+const defaultTheme = createTheme();
+
+export default function Album() {
+  return (
+    
+     <><Navbar /><div class="container">
+          <div class="row">
+              <a href="https://i.pinimg.com/originals/2a/6a/64/2a6a6462084197acf9bd483a3d6f6886.jpg" data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
+                  <img src="https://i.pinimg.com/originals/2a/6a/64/2a6a6462084197acf9bd483a3d6f6886.jpg" class="img-fluid rounded" style={{ width: '700px', height: '500px' }}></img>
+              </a>
+              <a href="https://images.unsplash.com/photo-1597157639073-69284dc0fdaf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW5kaWFuJTIwd2VkZGluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
+                  <img src="https://images.unsplash.com/photo-1597157639073-69284dc0fdaf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8aW5kaWFuJTIwd2VkZGluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60" class="img-fluid rounded" style={{ width: '700px', height: '500px' }}></img>
+              </a>
+              <a href="https://images.pexels.com/photos/1543762/pexels-photo-1543762.jpeg?cs=srgb&dl=pexels-craig-adderley-1543762.jpg&fm=jpg" data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
+                  <img src="https://images.pexels.com/photos/1543762/pexels-photo-1543762.jpeg?cs=srgb&dl=pexels-craig-adderley-1543762.jpg&fm=jpg" class="img-fluid rounded" style={{ width: '700px', height: '500px' }}></img>
+              </a>
+          </div>
+          <div class="row">
+              <a href="https://images.unsplash.com/photo-1587271407850-8d438ca9fdf2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGluZGlhbiUyMHdlZGRpbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
+                  <img src="https://images.unsplash.com/photo-1587271407850-8d438ca9fdf2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fGluZGlhbiUyMHdlZGRpbmd8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=500&q=60" class="img-fluid rounded" style={{ width: '700px', height: '500px' }}></img>
+              </a>
+              <a href="https://www.takerentpe.com/media/images/products/2023/04/22_gEPiYkN.jpg" data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
+                  <img src="https://www.takerentpe.com/media/images/products/2023/04/22_gEPiYkN.jpg" class="img-fluid rounded" style={{ width: '700px', height: '500px' }}></img>
+              </a>
+              <a href="https://5.imimg.com/data5/ANDROID/Default/2021/12/GB/DF/OP/30531514/product-jpeg.jpg" data-toggle="lightbox" data-gallery="gallery" class="col-md-4">
+                  <img src="https://5.imimg.com/data5/ANDROID/Default/2021/12/GB/DF/OP/30531514/product-jpeg.jpg" class="img-fluid rounded" style={{ width: '700px', height: '500px' }}></img>
+              </a>
+          </div>
+      </div></>
+  );
+}
