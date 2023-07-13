@@ -1,0 +1,41 @@
+import React from "react";
+ import {Link as Treee} from 'react-router-dom';
+import "./Navbar.css";
+
+import { Link } from "react-scroll";
+
+
+
+export default function Navbar(){
+    
+    return(
+       
+    <div className="nav">
+    <a href="/" className="site-title">EVENT MANAGEMENT</a>
+    <div className="navcontact">
+  
+    <Treee to="/home">HOME</Treee>
+    <Link to="about" smooth={true} offset={200} duration={500} cursor="pointer">ABOUT US</Link>
+    <Treee to="/gall" >GALLERY</Treee>
+    <Link to="footer" smooth={true} offset={200} duration={500}>CONTACT US</Link>
+
+    <div class="dropdown">
+    <button class="dropbtn">
+    <div className="menuicon"></div>
+    <div className="menuicon2"></div>
+    <div className="menuicon3"></div>
+    </button>
+    <div class="dropdown-content">
+      
+    
+      
+      <a href="#">PROFILE</a>
+      <a href="#">SETTINGS</a>
+      <a href="#">PRICING</a>
+      </div>
+      </div>
+    </div>
+    </div>        
+      
+    )
+}
