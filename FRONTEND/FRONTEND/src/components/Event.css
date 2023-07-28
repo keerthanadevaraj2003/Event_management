@@ -1,0 +1,7 @@
+.product-page__add-to-cart-button {
+    background-color: #4caf50;
+    color: white;
+    border:rounded;
+    padding: 10px 20px;
+    cursor: pointer;
+  }
